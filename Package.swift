@@ -1,16 +1,16 @@
-// swift-tools-version:4.0
+// swift-tools-version:5.0
 
 import PackageDescription
 
 let package = Package(
-  name: "SwiftAWSLogs",
+  name: "CloudWatch",
   products: [
-      .library(name: "SwiftAWSLogs", targets: ["SwiftAWSLogs"]),
+      .library(name: "CloudWatch", targets: ["CloudWatch"]),
   ],
   dependencies: [
-      .package(url: "https://github.com/noppoMan/aws-sdk-swift-core.git", .upToNextMajor(from: "1.0.0"))
+      .package(url: "https://github.com/swift-aws/aws-sdk-swift-core.git", .upToNextMinor(from: "4.2.0"))
   ],
   targets: [
-      .target(name: "SwiftAWSLogs", dependencies: ["AWSSDKSwiftCore"]),
+      .target(name: "CloudWatch", dependencies: ["AWSSDKSwiftCore"]),
   ]
 )
